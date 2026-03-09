@@ -1,0 +1,43 @@
+============================================================
+Model Performance Summary — Credit Score Dataset
+============================================================
+
+  Linear Regression
+    RMSE              : 29.7137
+    MAE               : 21.4470
+    R²                : 0.7776
+    Explained Variance: 0.7787
+    MAPE (%)          : 3.72
+
+  Decision Tree
+    RMSE              : 36.7072
+    MAE               : 27.6844
+    R²                : 0.6605
+    Explained Variance: 0.6624
+    MAPE (%)          : 4.73
+
+  Random Forest
+    RMSE              : 29.7727
+    MAE               : 21.7244
+    R²                : 0.7767
+    Explained Variance: 0.7786
+    MAPE (%)          : 3.75
+
+  XGBoost
+    RMSE              : 29.5362
+    MAE               : 21.4436
+    R²                : 0.7802
+    Explained Variance: 0.7823
+    MAPE (%)          : 3.72
+
+  MLP (Neural Net)
+    RMSE              : 73.9628
+    MAE               : 49.4354
+    R²                : -0.3782
+    Explained Variance: -0.3551
+    MAPE (%)          : 8.67
+
+============================================================
+  Best overall model  : XGBoost
+  Best tree model     : XGBoost
+============================================================

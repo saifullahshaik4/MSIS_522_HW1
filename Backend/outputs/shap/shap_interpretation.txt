@@ -1,0 +1,7 @@
+SHAP (SHapley Additive exPlanations) analysis was applied to the best tree-based model (xgboost) using 200 held-out test observations.
+
+The three features with the greatest average impact on credit score predictions are: R_DEBT_INCOME, R_EXPENDITURE, R_GAMBLING_INCOME.
+
+In the beeswarm plot, each point represents one customer. Red dots indicate high feature values; blue dots indicate low values. Points to the right of centre push the predicted score higher; points to the left push it lower.
+
+The bar chart ranks features by mean |SHAP value| — the average magnitude of impact regardless of direction. The waterfall plot explains one specific customer's prediction by decomposing it into individual feature contributions, showing the path from the baseline score to the final prediction.

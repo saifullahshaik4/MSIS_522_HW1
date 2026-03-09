@@ -1,0 +1,19 @@
+{
+  "top_shap_features": [
+    "R_DEBT_INCOME",
+    "R_EXPENDITURE",
+    "R_GAMBLING_INCOME",
+    "R_TAX_DEBT",
+    "R_ENTERTAINMENT",
+    "T_GAMBLING_12",
+    "R_DEBT_SAVINGS",
+    "R_TRAVEL_DEBT",
+    "INCOME",
+    "R_GROCERIES",
+    "T_EXPENDITURE_6",
+    "T_TAX_12",
+    "R_CLOTHING_INCOME",
+    "T_HOUSING_12",
+    "R_UTILITIES_DEBT"
+  ]
+}

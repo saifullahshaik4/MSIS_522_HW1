@@ -1,0 +1,47 @@
+[
+  {
+    "model":"linear_regression",
+    "display_name":"Linear Regression",
+    "rmse":29.713699089,
+    "mae":21.4470291914,
+    "r2":0.7775674061,
+    "explained_variance":0.7787491383,
+    "mape":3.7201835689
+  },
+  {
+    "model":"decision_tree",
+    "display_name":"Decision Tree",
+    "rmse":36.7072488591,
+    "mae":27.6843582131,
+    "r2":0.660539961,
+    "explained_variance":0.6623938113,
+    "mape":4.7340591193
+  },
+  {
+    "model":"random_forest",
+    "display_name":"Random Forest",
+    "rmse":29.7727305264,
+    "mae":21.7243943648,
+    "r2":0.7766827261,
+    "explained_variance":0.7785672941,
+    "mape":3.7541082568
+  },
+  {
+    "model":"xgboost",
+    "display_name":"XGBoost",
+    "rmse":29.5361557007,
+    "mae":21.4436092377,
+    "r2":0.7802175879,
+    "explained_variance":0.7822804431,
+    "mape":3.716866672
+  },
+  {
+    "model":"mlp",
+    "display_name":"MLP (Neural Net)",
+    "rmse":73.9627990723,
+    "mae":49.4354400635,
+    "r2":-0.3781980276,
+    "explained_variance":-0.3551405902,
+    "mape":8.6686685681
+  }
+]
