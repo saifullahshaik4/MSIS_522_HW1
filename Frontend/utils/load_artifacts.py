@@ -6,6 +6,26 @@ import joblib
 import pandas as pd
 from pathlib import Path
 
+
+def _patch_sklearn_compat() -> None:
+    """Inject missing internal sklearn classes removed in newer versions.
+
+    Models pickled with sklearn 1.6.x use _RemainderColsList (a list subclass
+    inside ColumnTransformer). sklearn 1.7+ removed it. Providing a stub lets
+    joblib.load() succeed without retraining.
+    """
+    try:
+        import sklearn.compose._column_transformer as _ct
+        if not hasattr(_ct, "_RemainderColsList"):
+            class _RemainderColsList(list):  # type: ignore[no-redef]
+                """Compatibility shim for sklearn <1.7 pickled ColumnTransformers."""
+            _ct._RemainderColsList = _RemainderColsList  # type: ignore[attr-defined]
+    except Exception:
+        pass
+
+
+_patch_sklearn_compat()
+
 FRONTEND_DIR = Path(__file__).resolve().parent.parent
 REPO_ROOT    = FRONTEND_DIR.parent
 OUTPUTS_DIR  = REPO_ROOT / "Backend" / "outputs"
