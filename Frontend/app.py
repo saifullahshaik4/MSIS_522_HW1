@@ -609,6 +609,16 @@ All remaining features are auto-filled with training-set medians. Works with all
         with col_desc:
             st.info(MODEL_DESCRIPTIONS.get(chosen_model, ""))
 
+        # Warn if MLP selected but TF not available in this environment
+        if chosen_model == "MLP (Neural Net)":
+            _mlp_available = la.load_keras_model() is not None
+            if not _mlp_available:
+                st.warning(
+                    "⚠️ **MLP (Neural Net) is not available** in this deployment because "
+                    "TensorFlow is not installed (it exceeds Streamlit Cloud's package limits). "
+                    "All four other models work normally — please select one of those to predict."
+                )
+
         st.markdown("---")
 
         # =========================================================
@@ -898,5 +908,5 @@ st.markdown("---")
 st.caption(
     "📊 **Credit Score Predictor** | MSIS 522 HW1 | "
     "Models trained offline — artefacts loaded from `Backend/outputs/` — no retraining at runtime. "
-    "Built with Streamlit · scikit-learn · XGBoost · TensorFlow / Keras · SHAP."
+    "Built with Streamlit · scikit-learn · XGBoost · SHAP · (MLP trained with TensorFlow/Keras)."
 )

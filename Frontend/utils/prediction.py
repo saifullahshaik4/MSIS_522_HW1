@@ -63,6 +63,11 @@ def predict(
 
     if model_key == "mlp":
         model = load_keras_model()
+        if model is None:
+            raise RuntimeError(
+                "MLP (Neural Net) requires TensorFlow, which is not installed in "
+                "this deployment. Please select a different model."
+            )
         X_arr = preprocessor_scaled.transform(input_row)
         pred  = model.predict(X_arr, verbose=0).flatten()[0]
     else:
