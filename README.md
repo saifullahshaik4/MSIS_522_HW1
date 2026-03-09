@@ -133,5 +133,11 @@ The app opens at `http://localhost:8501`. It **does not retrain models** — it 
 3. Set **Main file path** to `Frontend/app.py`.
 4. Set **Requirements file** to `Frontend/requirements.txt`.
 5. Ensure `Backend/outputs/` is committed (use Git LFS for large `.pkl` / `.keras` files if needed).
+6. The `runtime.txt` in the repo root pins Python 3.11 for compatibility.
+
+**Dependency notes for Streamlit Cloud:**
+- `tensorflow-cpu==2.15.0` is used instead of `tensorflow` — it is ~3× smaller (no GPU drivers) and works on Linux cloud instances.
+- `numpy<2.0` is pinned to avoid breaking changes that affect TF 2.15.
+- If you see *"installer returned a non-zero exit code"*, verify these exact pins are committed in `Frontend/requirements.txt`.
 
 > The app must have all artefacts committed. It does **not** run the backend pipeline on the cloud.

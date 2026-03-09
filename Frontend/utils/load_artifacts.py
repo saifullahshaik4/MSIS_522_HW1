@@ -95,11 +95,15 @@ def load_sklearn_model(name: str):
 
 
 def load_keras_model():
-    import tensorflow as tf
-    # compile=False avoids optimizer state incompatibilities across TF versions
-    return tf.keras.models.load_model(
-        str(MODELS_DIR / "mlp_model.keras"), compile=False
-    )
+    try:
+        import tensorflow as tf
+        return tf.keras.models.load_model(
+            str(MODELS_DIR / "mlp_model.keras"), compile=False
+        )
+    except Exception as e:
+        raise RuntimeError(
+            f"Could not load MLP model. Ensure tensorflow-cpu==2.15.0 is installed. Error: {e}"
+        )
 
 
 def load_preprocessor(kind: str = "scaled"):
